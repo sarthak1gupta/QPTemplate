@@ -5,6 +5,7 @@ import Signup from './Signup'
 import { Home } from "./Home";
 import {Teacher} from "./Teacher"
 import {Coordinator} from "./Coordinator"
+import Template from "./Template";
 
 
 
@@ -19,6 +20,7 @@ function App (){
           <Route path='/home' element={<Home />}></Route>
           <Route path='/' element={<Login />}></Route>
           <Route path='/signup' element={<Signup />}></Route>
+          <Route path='/templatecreate' element={<Template/>}></Route>
         </Routes>
         </BrowserRouter>
         </div>
