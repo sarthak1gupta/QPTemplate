@@ -82,6 +82,20 @@ app.post('/signup', (req, res) => {
     });
   });
 
+  //template creation
+  app.post('/templatecreate', (req, res) => {
+    const {qno,subpart,Max_Marks,BT,CO } = req.body;
+      db.query('INSERT INTO psuedo_template (qno,subpart,Max_Marks,BT,CO) VALUES (?, ?, ?, ?,?)', [qno,subpart,Max_Marks,BT,CO], (error) => {
+        if (error) {
+          console.error('Database query error: ', error);
+          return res.status(500).json({ success: false, message: 'Internal server error' });
+        }
+  
+        // User registration successful
+        res.json({ success: true, message: 'Template Creation Successful' });
+      });
+    });
+
 // Start the server
 const PORT = 8081;
 app.listen(PORT, () => {
